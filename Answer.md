@@ -7,20 +7,20 @@ They are abstract classes with a specific number of subclasses all defined in th
 For example: 
 
   ```kotlin
-        sealed class Response<out R>
-        class Success<R>(val value: R): Response<R>()
-        class Failure(val error: Throwable): Response<Nothing>()
-      
-        fun handle(response: Response<String>)
-        {
-          val text = when(response) 
-          {
-            is Success -> "Success, date are: " + response.value
-            is Failure -> "Error"
-          }
-        
-          print(text)
-        }
+    sealed class Response<out R>
+    class Success<R>(val value: R): Response<R>()
+    class Failure(val error: Throwable): Response<Nothing>()
+
+    fun handle(response: Response<String>)
+    {
+      val text = when(response) 
+      {
+        is Success -> "Success, date are: " + response.value
+        is Failure -> "Error"
+      }
+
+      print(text)
+    }
   ```
 
 ### Enum Class
@@ -31,10 +31,10 @@ like  `values` and `valueOf`.
 Example:
 
   ```kotlin
-        //Basic usage of enum class
-        enum class Direction {
-          NORTH, EAST, SOUTH, WEST
-        }
+    //Basic usage of enum class
+    enum class Direction {
+      NORTH, EAST, SOUTH, WEST
+    }
   ```
   
   ```kotlin
@@ -54,6 +54,5 @@ Example:
 
       abstract fun signal(): ProtocolState
      }
-    
   ```
    
